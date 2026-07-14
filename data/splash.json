@@ -1,0 +1,26 @@
+{
+  "brandName": "PRADEEP",
+  "subBrandName": "JEWELLERS",
+  "taglineLines": [
+    "CRAFTED WITH TRUST",
+    "DELIVERED WITH CARE"
+  ],
+  "closingQuote": "TIMELESS ELEGANCE BEGINS HERE",
+  "loadingText": "LOADING...",
+  "durationMs": 3000,
+  "redirectTo": "/(auth)/sign-in",
+  "trustBadges": [
+    {
+      "icon": "shield",
+      "label": "BIS HALLMARK CERTIFIED GOLD"
+    },
+    {
+      "icon": "diamond",
+      "label": "CERTIFIED DIAMONDS"
+    },
+    {
+      "icon": "badge",
+      "label": "TRUSTED SINCE 1998"
+    }
+  ]
+}
