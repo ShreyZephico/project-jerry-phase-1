@@ -6,7 +6,17 @@ export default function RootLayout() {
   return (
     <>
       <StatusBar style="dark" />
-      <Stack screenOptions={{ headerShown: false }} />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" options={{ animation: 'none' }} />
+        <Stack.Screen name="splash" options={{ animation: 'fade' }} />
+        <Stack.Screen
+          name="(auth)"
+          options={{
+            animation: 'fade_from_bottom',
+            animationDuration: 450,
+          }}
+        />
+      </Stack>
     </>
   );
 }

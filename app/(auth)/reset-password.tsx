@@ -1,132 +1,53 @@
+import { Pressable, Text, TextInput, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import {
-  KeyboardAvoidingView,
-  Platform,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
+import AuthLayout, { authStyles as styles } from '@/components/AuthLayout';
+import { colors } from '@/constants/colors';
+import authData from '@/data/auth.json';
+
+const page = authData.resetPassword;
 
 export default function ResetPasswordScreen() {
   const router = useRouter();
 
   return (
-    <SafeAreaView style={styles.safe}>
-      <KeyboardAvoidingView
-        style={styles.container}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      >
-        <View style={styles.header}>
-          <Text style={styles.title}>Reset Password</Text>
-          <Text style={styles.subtitle}>
-            Enter a new password for your account.
+    <AuthLayout>
+      <Text style={styles.title}>{page.title}</Text>
+      <Text style={styles.description}>{page.description}</Text>
+
+      <View style={styles.form}>
+        <Text style={styles.label}>{page.fields.newPassword.label}</Text>
+        <TextInput
+          style={styles.input}
+          placeholder={page.fields.newPassword.placeholder}
+          placeholderTextColor={colors.placeholder}
+          secureTextEntry
+        />
+
+        <Text style={styles.label}>{page.fields.confirmPassword.label}</Text>
+        <TextInput
+          style={styles.input}
+          placeholder={page.fields.confirmPassword.placeholder}
+          placeholderTextColor={colors.placeholder}
+          secureTextEntry
+        />
+
+        <Pressable
+          style={styles.button}
+          onPress={() => router.replace(page.signInRoute as any)}
+        >
+          <Text style={styles.buttonText}>{page.buttonText}</Text>
+        </Pressable>
+
+        <Pressable
+          style={styles.secondaryButton}
+          onPress={() => router.replace(page.signInRoute as any)}
+        >
+          <Text style={styles.secondaryButtonText}>
+            {page.secondaryButtonText}
           </Text>
-        </View>
-
-        <View style={styles.form}>
-          <Text style={styles.label}>New Password</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="New password"
-            placeholderTextColor="#9CA3AF"
-            secureTextEntry
-          />
-
-          <Text style={styles.label}>Confirm Password</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Confirm new password"
-            placeholderTextColor="#9CA3AF"
-            secureTextEntry
-          />
-
-          <Pressable
-            style={styles.button}
-            onPress={() => router.replace('/(auth)/sign-in')}
-          >
-            <Text style={styles.buttonText}>Reset Password</Text>
-          </Pressable>
-
-          <Pressable
-            style={styles.secondaryButton}
-            onPress={() => router.replace('/(auth)/sign-in')}
-          >
-            <Text style={styles.secondaryButtonText}>Back to Sign In</Text>
-          </Pressable>
-        </View>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+        </Pressable>
+      </View>
+    </AuthLayout>
   );
 }
-
-const styles = StyleSheet.create({
-  safe: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-  },
-  container: {
-    flex: 1,
-    paddingHorizontal: 24,
-    justifyContent: 'center',
-  },
-  header: {
-    marginBottom: 32,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: '700',
-    color: '#111827',
-  },
-  subtitle: {
-    marginTop: 8,
-    fontSize: 16,
-    color: '#6B7280',
-    lineHeight: 22,
-  },
-  form: {
-    gap: 8,
-  },
-  label: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#374151',
-    marginTop: 8,
-  },
-  input: {
-    height: 52,
-    borderWidth: 1,
-    borderColor: '#E5E7EB',
-    borderRadius: 12,
-    paddingHorizontal: 16,
-    fontSize: 16,
-    color: '#111827',
-    backgroundColor: '#F9FAFB',
-  },
-  button: {
-    height: 52,
-    borderRadius: 12,
-    backgroundColor: '#111827',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 16,
-  },
-  buttonText: {
-    color: '#ffffff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  secondaryButton: {
-    height: 52,
-    borderRadius: 12,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  secondaryButtonText: {
-    color: '#374151',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-});
