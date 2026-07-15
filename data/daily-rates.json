@@ -1,0 +1,43 @@
+{
+  "current": {
+    "id": "rate-2026-07-15",
+    "date": "2026-07-15",
+    "gold24kPerGram": 7250,
+    "gold22kPerGram": 6650,
+    "silver999PerGram": 92.5,
+    "notes": "Morning board rate",
+    "isActive": true,
+    "updatedAt": "2026-07-15T04:30:00.000Z"
+  },
+  "history": [
+    {
+      "id": "rate-2026-07-14",
+      "date": "2026-07-14",
+      "gold24kPerGram": 7220,
+      "gold22kPerGram": 6620,
+      "silver999PerGram": 91.8,
+      "notes": "Previous day",
+      "isActive": false,
+      "updatedAt": "2026-07-14T04:30:00.000Z"
+    },
+    {
+      "id": "rate-2026-07-13",
+      "date": "2026-07-13",
+      "gold24kPerGram": 7185,
+      "gold22kPerGram": 6588,
+      "silver999PerGram": 90.4,
+      "notes": "",
+      "isActive": false,
+      "updatedAt": "2026-07-13T04:30:00.000Z"
+    },
+    {
+      "id": "rate-2026-07-12",
+      "date": "2026-07-12",
+      "gold24kPerGram": 7160,
+      "gold22kPerGram": 6560,
+      "silver999PerGram": 89.9,
+      "isActive": false,
+      "updatedAt": "2026-07-12T04:30:00.000Z"
+    }
+  ]
+}

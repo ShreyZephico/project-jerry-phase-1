@@ -1,0 +1,63 @@
+[
+  {
+    "id": "txn-1",
+    "customerId": "cust-1",
+    "customerName": "Shrey J Shah",
+    "type": "buy",
+    "metal": "gold",
+    "amountInr": 5000,
+    "grams": 0.6897,
+    "ratePerGram": 7250,
+    "status": "success",
+    "createdAt": "2026-07-14T11:20:00.000Z"
+  },
+  {
+    "id": "txn-2",
+    "customerId": "cust-1",
+    "customerName": "Shrey J Shah",
+    "type": "buy",
+    "metal": "silver",
+    "amountInr": 1850,
+    "grams": 20,
+    "ratePerGram": 92.5,
+    "status": "success",
+    "createdAt": "2026-07-12T10:05:00.000Z"
+  },
+  {
+    "id": "txn-3",
+    "customerId": "cust-2",
+    "customerName": "Ananya Patel",
+    "type": "buy",
+    "metal": "gold",
+    "amountInr": 2500,
+    "grams": 0.3448,
+    "ratePerGram": 7250,
+    "status": "success",
+    "createdAt": "2026-07-13T09:10:00.000Z"
+  },
+  {
+    "id": "txn-4",
+    "customerId": "cust-4",
+    "customerName": "Neha Sharma",
+    "type": "credit",
+    "metal": "gold",
+    "amountInr": 0,
+    "grams": 0.5,
+    "ratePerGram": 7200,
+    "status": "success",
+    "notes": "Festival bonus credit",
+    "createdAt": "2026-07-10T16:40:00.000Z"
+  },
+  {
+    "id": "txn-5",
+    "customerId": "cust-3",
+    "customerName": "Rahul Mehta",
+    "type": "buy",
+    "metal": "gold",
+    "amountInr": 250,
+    "grams": 0.0347,
+    "ratePerGram": 7200,
+    "status": "pending",
+    "createdAt": "2026-06-01T12:00:00.000Z"
+  }
+]

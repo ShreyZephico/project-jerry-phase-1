@@ -14,9 +14,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zephico.jerry"
     },
     "android": {
+      "package": "com.zephico.jerry",
       "adaptiveIcon": {
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
@@ -29,7 +31,22 @@
       "bundler": "metro"
     },
     "plugins": [
-      "expo-router"
-    ]
+      "expo-router",
+      "expo-web-browser",
+      [
+        "expo-notifications",
+        {
+          "color": "#C5A059",
+          "defaultChannel": "jerry-default"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "965e9b4b-f8fb-4733-a6cf-f007b1eb34d0"
+      },
+      "router": {}
+    },
+    "owner": "shreyshah"
   }
 }

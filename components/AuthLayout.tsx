@@ -22,7 +22,8 @@ import {
   Montserrat_600SemiBold,
 } from '@expo-google-fonts/montserrat';
 
-import { colors } from '@/constants/colors';
+import { GlassCard } from '@/components/ui/GlassCard';
+import { colors, glass, spacing } from '@/constants/colors';
 import authData from '@/data/auth.json';
 
 type AuthLayoutProps = {
@@ -63,6 +64,11 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
             keyboardShouldPersistTaps="handled"
             showsVerticalScrollIndicator={false}
           >
+            <View pointerEvents="none" style={styles.orbWrap}>
+              <View style={[styles.orb, styles.orbOne]} />
+              <View style={[styles.orb, styles.orbTwo]} />
+            </View>
+
             <View style={styles.brandBlock}>
               <Image
                 source={require('../assets/splash/logo.png')}
@@ -73,7 +79,13 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
               <Text style={styles.subBrandName}>{authData.subBrandName}</Text>
             </View>
 
-            {children}
+            <GlassCard
+              intensity={glass.intensityStrong}
+              style={styles.formCard}
+              contentStyle={styles.formCardInner}
+            >
+              {children}
+            </GlassCard>
           </ScrollView>
         </KeyboardAvoidingView>
       </SafeAreaView>
@@ -114,7 +126,7 @@ export const authStyles = StyleSheet.create({
     height: 50,
     borderWidth: 1,
     borderColor: colors.inputBorder,
-    borderRadius: 10,
+    borderRadius: 12,
     paddingHorizontal: 16,
     fontSize: 15,
     fontFamily: 'Montserrat_400Regular',
@@ -123,11 +135,16 @@ export const authStyles = StyleSheet.create({
   },
   button: {
     height: 52,
-    borderRadius: 10,
+    borderRadius: 12,
     backgroundColor: colors.buttonBg,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.2)',
+  },
+  buttonDisabled: {
+    opacity: 0.55,
   },
   buttonText: {
     fontFamily: 'Montserrat_600SemiBold',
@@ -198,9 +215,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  orbWrap: {
+    ...StyleSheet.absoluteFillObject,
+  },
+  orb: {
+    position: 'absolute',
+    borderRadius: 999,
+  },
+  orbOne: {
+    width: 200,
+    height: 200,
+    top: 20,
+    right: -60,
+    backgroundColor: colors.orbGold,
+  },
+  orbTwo: {
+    width: 160,
+    height: 160,
+    bottom: 80,
+    left: -50,
+    backgroundColor: colors.orbAmber,
+  },
   brandBlock: {
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: spacing.lg,
   },
   logo: {
     width: 88,
@@ -223,5 +261,14 @@ const styles = StyleSheet.create({
     color: colors.brandSubtitle,
     textAlign: 'center',
     textTransform: 'uppercase',
+  },
+  formCard: {
+    width: '100%',
+    marginBottom: 0,
+  },
+  formCardInner: {
+    width: '100%',
+    paddingVertical: spacing.xl,
+    paddingHorizontal: spacing.lg,
   },
 });

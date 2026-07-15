@@ -1,0 +1,22 @@
+{
+  "id": "company-1",
+  "logoUrl": null,
+  "companyName": "Pradeep Jewellers",
+  "legalBusinessName": "Pradeep Jewellers Private Limited",
+  "businessType": "pvt_ltd",
+  "addressLine1": "12 MG Road",
+  "addressLine2": "Near City Plaza",
+  "city": "Ahmedabad",
+  "state": "Gujarat",
+  "pincode": "380001",
+  "phone": "07940001234",
+  "supportPhone": "9265075114",
+  "email": "hello@pradeepjewellers.com",
+  "supportEmail": "support@pradeepjewellers.com",
+  "gstNumber": "24ABCDE1234F1Z5",
+  "panNumber": "ABCDE1234F",
+  "termsSummary": "All digital gold purchases are subject to company terms and applicable regulations.",
+  "privacySummary": "Customer data is used only for account, wallet, and support purposes.",
+  "refundSummary": "Digital metal once credited to wallet is non-refundable except in case of failed payment settlement.",
+  "updatedAt": "2026-07-14T10:00:00.000Z"
+}
